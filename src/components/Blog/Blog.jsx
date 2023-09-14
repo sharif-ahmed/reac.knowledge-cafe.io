@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { FaBookmark, FaBook } from "react-icons/fa";
 
 const Blog = (props) => {
     // eslint-disable-next-line react/prop-types
-    const { blog } = props
+    const { blog, handleAddBookmark} = props
     return (
         <div className='mb-10'>
             <figure>
@@ -17,9 +18,9 @@ const Blog = (props) => {
                         <p>{blog.posted_date}</p>
                     </div>
                 </div>
-                <div>
+                <div className='flex items-center'>
                     <span>{blog.reading_time} min read</span>
-                    <img src="" alt="" />
+                    <button className='ml-2' onClick={() => handleAddBookmark(blog)}><FaBookmark></FaBookmark></button>
                 </div>
             </div>
             <h2 className='my-4 text-[#111] font-bold text-[40px]'>{blog.title}</h2>
