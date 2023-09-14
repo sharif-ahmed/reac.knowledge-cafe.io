@@ -4,7 +4,7 @@ import Blog from '../Blog/Blog';
 const Blogs = (props) => {
 
     // eslint-disable-next-line react/prop-types
-    const { handleAddBookmark } = props;
+    const { handleAddBookmark, handleMarkAsRead} = props;
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const Blogs = (props) => {
         <div>
             {
                 blogs.map((blog, idx) => (
-                    <Blog key={idx} blog={blog} handleAddBookmark={handleAddBookmark}></Blog>
+                    <Blog key={idx} blog={blog} handleAddBookmark={handleAddBookmark} handleMarkAsRead={handleMarkAsRead}></Blog>
                 ))
             }
         </div>

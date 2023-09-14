@@ -4,11 +4,11 @@ import { FaBookmark, FaBook } from "react-icons/fa";
 
 const Blog = (props) => {
     // eslint-disable-next-line react/prop-types
-    const { blog, handleAddBookmark} = props
+    const { blog, handleAddBookmark, handleMarkAsRead} = props
     return (
         <div className='mb-10'>
             <figure>
-                <img className='w-full rounded-lg' src={blog.cover} alt="" />
+                <img className='w-full h-[420px] rounded-lg' src={blog.cover} alt="" />
             </figure>
             <div className='flex justify-between items-center mt-8'>
                 <div className='flex'>
@@ -30,7 +30,7 @@ const Blog = (props) => {
                 ))
             }
             <div>
-                <button className='text-[20px] text-base text-[#6047EC] mt-5'>Mark As Read</button>
+                <button onClick={() => handleMarkAsRead(blog)} className='text-[20px] text-base text-[#6047EC] mt-5'>Mark As Read</button>
             </div>
             <hr className='mt-4' />
         </div>
